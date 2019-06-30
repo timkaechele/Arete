@@ -22,7 +22,10 @@ GEM
     ice_cube (0.16.3)
     multipart-post (2.1.1)
     mustermann (1.0.3)
+    nio4r (2.3.1)
     oj (3.7.12)
+    puma (4.0.0)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -44,6 +47,7 @@ DEPENDENCIES
   faraday
   faraday_middleware-parse_oj
   icalendar!
+  puma
   shotgun
   sinatra
   typhoeus

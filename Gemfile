@@ -6,6 +6,9 @@ gem 'sinatra'
 # Faraday
 gem 'faraday'
 
+# Application Server
+gem 'puma'
+
 # Well performing json deserializer
 gem 'faraday_middleware-parse_oj'
 
