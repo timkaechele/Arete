@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arete - Gitlab Calendar Provider</title>
+  <link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="brand">Arete</h1>
+    <p>
+      Arete is a gitlab calender provider.
+      It allows you to subscribe to your issue and milestone due dates in your
+      calendar.
+    </p>
+    <h2 class="howto">How To</h2>
+    <p></p>
+      Access the base url of your gitlab installation and your api access token
+      and we will generate a calendar url that you can subscribe to in your calendar application.
+    </p>
+  </header>
+  <div class="boxed">
+    <form id="configuration-form" action="#">
+      <div class="input-group">
+        <label for="url-input">Gitlab Base Url</label>
+        <input id="url-input" type="url" placeholder="e.g https://gitlab.com" required="true">
+      </div>
+      <div class="input-group">
+        <label for="token-input">Api Token</label>
+        <input id="token-input" type="text" placeholder="e.g. bDpN4[yK#CL6=wVE" required="true">
+        <p class="hint">
+          The access token requires the <code>read_user</code> and <code>api</code> permissions.
+          <br>
+          <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">
+            How to generate an access token?
+          </a>
+        </p>
+      </div>
+      <button type="submit" class="btn-block" id="test-configuration-button">Generate</button>
+    </form>
+
+    <div class="output hidden" id="error">
+      <h3 class="centered">Error</h3>
+      <p class="centered">(ಠ_ಠ)</p>
+      <p>We encountered an error while trying to generate your calendar.</p>
+      <p>Make sure you entered the correct url and that your api key has the necessary permissions.</p>
+    </div>
+
+
+    <div class="output centered hidden" id="processing">
+      <h3>Processing</h3>
+      <p>We are currently validating your settings. One Moment please.</p>
+      <div class="container">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="output centered hidden" id="success-output">
+      <h3>Success</h3>
+      <p>ლ(╹◡╹)ლ</p>
+      <p>Subscribe to the following URL in your calendar application:</p>
+      <p id="url-output" class="url-output">
+        http://localhost:9393/calendar.ics?protocol=https&url=lab.jamit.de&token=d3BsA-kLQsfxE93uh7yW#get-info
+      </p>
+    </div>
+  </div>
+  <p class="centered">Made with <span class="text-red">&#10084;</span> in Karlsruhe</p>
+  <script src="/configurator.js"></script>
+</body>
+</html>
